@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/nicksnyder/go-i18n/v2/internal/plural"
+	"github.com/go-saas/go-i18n/v2/internal/plural"
 
 	"golang.org/x/text/language"
 )
@@ -141,4 +141,16 @@ func (b *Bundle) getMessageTemplate(tag language.Tag, id string) *MessageTemplat
 		return nil
 	}
 	return templates[id]
+}
+
+func (b *Bundle) GetMessageTemplates() map[language.Tag]map[string]*MessageTemplate {
+	ret := make(map[language.Tag]map[string]*MessageTemplate)
+	for tag, m := range b.messageTemplates {
+		t := make(map[string]*MessageTemplate)
+		for s, template := range m {
+			t[s] = template
+		}
+		ret[tag] = t
+	}
+	return ret
 }

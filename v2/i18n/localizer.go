@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"text/template"
 
-	"github.com/nicksnyder/go-i18n/v2/internal/plural"
+	"github.com/go-saas/go-i18n/v2/internal/plural"
 	"golang.org/x/text/language"
 )
 
@@ -220,4 +220,8 @@ func (l *Localizer) MustLocalize(lc *LocalizeConfig) string {
 		panic(err)
 	}
 	return localized
+}
+
+func (l *Localizer) GetBundle() *Bundle {
+	return l.bundle
 }

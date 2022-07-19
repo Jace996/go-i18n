@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/nicksnyder/go-i18n/v2/i18n"
+	"github.com/go-saas/go-i18n/v2/i18n"
 )
 
 func usageExtract() {
