@@ -33,11 +33,20 @@ type Localizer struct {
 func NewLocalizer(bundle *Bundle, langs ...string) *Localizer {
 	return &Localizer{
 		bundle: bundle,
-		tags:   parseTags(langs),
+		tags:   ParseTag(langs),
 	}
 }
 
-func parseTags(langs []string) []language.Tag {
+// NewLocalizerFromTags returns a new Localizer that looks up messages
+// in the bundle according to the language preferences in langs.
+func NewLocalizerFromTags(bundle *Bundle, tags ...language.Tag) *Localizer {
+	return &Localizer{
+		bundle: bundle,
+		tags:   tags,
+	}
+}
+
+func ParseTag(langs []string) []language.Tag {
 	tags := []language.Tag{}
 	for _, lang := range langs {
 		t, _, err := language.ParseAcceptLanguage(lang)
