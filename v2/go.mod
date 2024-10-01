@@ -1,4 +1,4 @@
-module github.com/go-saas/go-i18n/v2
+module github.com/jace996/go-i18n/v2
 
 go 1.12
 

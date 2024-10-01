@@ -5,8 +5,8 @@ import (
 
 	"text/template"
 
-	"github.com/go-saas/go-i18n/v2/internal"
-	"github.com/go-saas/go-i18n/v2/internal/plural"
+	"github.com/jace996/go-i18n/v2/internal"
+	"github.com/jace996/go-i18n/v2/internal/plural"
 )
 
 // MessageTemplate is an executable template for a message.
